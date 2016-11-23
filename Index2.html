@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>自助报价</title>
+
+	<!--样式-->
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <style>
+		li>input, li>select{
+			width:65%;
+		}
+    </style>
+    
+    <!--脚本-->
+    <script src="js/jquery.min.js"></script>
+    <script>
+		$(document).bind('mobileinit',function(){
+			$.mobile.pushStateEnabled = false;
+		});
+	</script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div data-role="page" >
+    	<div data-role="header" id="header" data-theme="b">
+        	<h3>自助报价</h3>
+            <a href="#" class="ui-btn ui-btn-right ui-btn-inline ui-btn-corner-all ui-mini ui-btn-icon-right ui-icon-gear ui-btn-icon-notext">其他</a>
+        </div>
+        
+        <div data-role="content" id="main">
+        <form>
+            <!--物料材质-->
+            <ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">物料材质</li>
+                <li class="ui-field-contain">
+                	<label for="product-name">品名</label>
+                    <select id="product-name">
+                    	<option>item1</option>
+                    </select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="brand-name">品牌</label>
+                    <select id="brand-name">
+                    	<option>item1</option>
+                    </select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="product-type">型号</label>
+                    <select id="product-type">
+                    	<option>item1</option>
+                    </select>
+                </li>
+            </ul>
+            
+            <!--标签大小-->
+            <ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">标签大小</li>
+                <li class="ui-field-contain">
+                	<label for="label-size-width">长(MM)</label>
+                    <input id="label-size-width" type="number"/>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="label-size-height">宽(MM)</label>
+                    <input id="label-size-height" type="number"/>
+                </li>
+                <li class="ui-field-contain" data-role="collapsible" data-expanded-icon="carat-u" data-collapsed-icon="carat-d">
+                	<h4>更多</h4>
+                    <ul data-role="listview">
+                    	<li class="ui-field-contain">
+                			<label for="label-size-margin-left">左边距(MM)</label>
+                    		<input id="label-size-margin-left" type="number"/>
+                		</li>
+                    	<li class="ui-field-contain">
+                			<label for="label-size-margin-right">右边距(MM)</label>
+                    		<input id="label-size-margin-right" type="number"/>
+                		</li>
+                    	<li class="ui-field-contain">
+                			<label for="label-size-margin-top">上边距(MM)</label>
+                    		<input id="label-size-margin-top" type="number"/>
+                		</li>
+                    	<li class="ui-field-contain">
+                			<label for="label-size-margin-bottom">下边距(MM)</label>
+                    		<input id="label-size-margin-bottom" type="number"/>
+                		</li>
+                    </ul>
+                </li>
+            </ul>
+            
+        	<!--数量-->
+        	<ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">数量</li>
+            	<li class="ui-field-contain">
+                	<label for="quantity-of-single">单笔数量(PCM)</label>
+                    <input id="quantity-of-single" type="number"/>
+                </li>
+            	<li class="ui-field-contain">
+                	<label for="quantity-per-roll">每卷数量(PCM)</label>
+                    <input id="quantity-per-roll" type="number"/>
+                </li>
+            </ul>
+            
+            <!--发货-->
+            <ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">物流</li>
+                <li class="ui-field-contain">
+                	<label for="date-of-shipment">发货日期</label>
+                    <input id="date-of-shipment" type="date"/>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="area-of-delivery">收货地区</label>
+                    <select id="area-of-delivery"></select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="transportation">运输方式</label>
+                    <select id="transportation"></select>
+                </li>
+            </ul>
+            
+            <!--其他-->
+            <ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">其他</li>
+                <li class="ui-field-contain">
+                	<label for="technology-request">工艺要求</label>
+                    <select id="technology-request"></select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="tax-or-not">是否含税</label>
+                    <select id="tax-or-not"></select>
+                </li>
+            </ul>
+            
+            <!--颜色-->
+            <ul data-role="listview" data-inset="true">
+            	<li data-role="list-divider" data-split-theme="b">颜色</li>
+                <li class="ui-field-contain">
+                	<label for="product-color">颜色</label>
+                    <select id="product-color"></select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="special-color">专色</label>
+                    <select id="special-color"></select>
+                </li>
+                <li class="ui-field-contain">
+                	<label for="back-channel">后道</label>
+                    <select id="back-channel"></select>
+                </li>
+            </ul>
+            
+            <!--确定提交-->
+            <input type="button" value="确定" data-theme="b"/>
+            
+           </form>
+        </div>
+    </div>
+</body>
+</html>
